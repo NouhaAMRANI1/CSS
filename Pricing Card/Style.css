@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #f5f3ef;
+      font-family: 'Syne', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+
+    /* BASE CARD */
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1.5px solid #e8e4de;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.08);
+    }
+
+    /* FEATURED CARD */
+    .card.featured {
+      background: #1a1a1a;
+      border-color: #1a1a1a;
+      color: #fff;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe066;
+      color: #1a1a1a;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .75rem;
+      border-radius: 99px;
+      width: fit-content;
+    }
+
+    .plan {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .featured .plan { color: #666; }
+
+    .price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #1a1a1a;
+    }
+
+    .featured .price { color: #fff; }
+
+    .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #aaa;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e8e4de;
+    }
+
+    .featured .divider { background: #2e2e2e; }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+
+    li {
+      font-size: .88rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .featured li { color: #bbb; }
+
+    li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ccc;
+      flex-shrink: 0;
+    }
+
+    .featured li::before { background: #444; }
+
+    li.included { color: #1a1a1a; font-weight: 600; }
+    .featured li.included { color: #fff; }
+    li.included::before { background: #1a1a1a; }
+    .featured li.included::before { background: #ffe066; }
+
+    .btn {
+      margin-top: auto;
+      padding: .85rem;
+      border-radius: 10px;
+      border: 1.5px solid #1a1a1a;
+      background: transparent;
+      color: #1a1a1a;
+      font-family: 'Syne', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .18s, color .18s;
+      letter-spacing: .04em;
+    }
+
+    .btn:hover { background: #1a1a1a; color: #fff; }
+
+    .featured .btn {
+      background: #ffe066;
+      border-color: #ffe066;
+      color: #1a1a1a;
+    }
+
+    .featured .btn:hover { background: #ffd700; border-color: #ffd700; }
+  </style>
+</head>
+<body>
+
+  <h1>Choose your plan</h1>
+
+  <div class="cards">
+
+    <!-- FREE -->
+    <div class="card">
+      <p class="plan">Free</p>
+      <div class="price">$0 <span>/ mo</span></div>
+      <div class="divider"></div>
+      <ul>
+        <li class="included">1 project</li>
+        <li class="included">5 GB storage</li>
+        <li>Email support</li>
+        <li>Analytics</li>
+        <li>Custom domain</li>
+      </ul>
+      <button class="btn">Get started</button>
+    </div>
+
+    <!-- PRO (featured) -->
+    <div class="card featured">
+      <span class="badge">Most popular</span>
+      <p class="plan">Pro</p>
+      <div class="price">$12 <span>/ mo</span></div>
+      <div class="divider"></div>
+      <ul>
+        <li class="included">10 projects</li>
+        <li class="included">50 GB storage</li>
+        <li class="included">Priority support</li>
+        <li class="included">Analytics</li>
+        <li>Custom domain</li>
+      </ul>
+      <button class="btn">Get started</button>
+    </div>
+
+    <!-- TEAM -->
+    <div class="card">
+      <p class="plan">Team</p>
+      <div class="price">$39 <span>/ mo</span></div>
+      <div class="divider"></div>
+      <ul>
+        <li class="included">Unlimited projects</li>
+        <li class="included">500 GB storage</li>
+        <li class="included">24/7 support</li>
+        <li class="included">Analytics</li>
+        <li class="included">Custom domain</li>
+      </ul>
+      <button class="btn">Get started</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
