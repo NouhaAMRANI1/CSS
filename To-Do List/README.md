@@ -1,16 +1,15 @@
-# Business Card
+# Styled To-Do List
 
-A simple business card web page built with HTML and CSS.
+A simple to-do list webpage built with HTML and CSS.
 
 ## Preview
 
-Displays a personal business card with the following sections:
+A checklist of tasks, each with a sub-item linking to a relevant resource:
 
-- Profile image
-- Full name, designation, and company
-- Contact info (email and phone)
-- Portfolio link
-- Social media links (Twitter, LinkedIn, GitHub)
+- Buy groceries → Walmart
+- Read a book → Goodreads
+- Exercise for 30 minutes → YouTube Workouts
+- Learn something new → Coursera
 
 ## Files
 
@@ -24,12 +23,13 @@ Displays a personal business card with the following sections:
 
 ## Customization
 
-To make it your own, update the following in `index.html`:
+To add or edit tasks, update the `<li>` items inside `ul.todo-list` in `index.html`:
 
-- Profile image `src`
-- Name, designation, and company text
-- Email and phone number
-- Portfolio and social media `href` links
+- Change the `<label>` text for the task name
+- Update the `href` in `.sub-item-link` to point to a different resource
+- Add more `<li>` blocks to add new tasks
+
+To change link colors, edit the `a` pseudo-class rules in `styles.css`.
 
 ## Technologies
 
